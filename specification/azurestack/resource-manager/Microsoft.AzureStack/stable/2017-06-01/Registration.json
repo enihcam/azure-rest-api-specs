@@ -15,6 +15,45 @@
         "application/json"
     ],
     "paths": {
+        "/subscriptions/{subscriptionId}/providers/Microsoft.AzureStack/registrations": {
+            "get": {
+                "x-ms-examples": {
+                    "Returns a list of all registrations.": {
+                        "$ref": "examples/Registration/List.json"
+                    }
+                },
+                "tags": [
+                    "Registrations"
+                ],
+                "description": "Returns a list of all registrations.",
+                "operationId": "Registrations_ListAll",
+                "parameters": [
+                    {
+                        "$ref": "AzureStack.json#/parameters/SubscriptionIdParameter"
+                    },
+                    {
+                        "$ref": "AzureStack.json#/parameters/ApiVersionParameter"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/RegistrationList"
+                        }
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation failed.",
+                        "schema": {
+                            "$ref": "AzureStack.json#/definitions/ErrorResponse"
+                        }
+                    }
+                },
+                "x-ms-pageable": {
+                    "nextLinkName": "nextLink"
+                }
+            }
+        },
         "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.AzureStack/registrations": {
             "get": {
                 "x-ms-examples": {
@@ -46,11 +85,11 @@
                         }
                     },
                     "default": {
-						"description": "Error response describing why the operation failed.",
-						"schema": {
-						  "$ref": "AzureStack.json#/definitions/ErrorResponse"
-						}
-					}
+                        "description": "Error response describing why the operation failed.",
+                        "schema": {
+                            "$ref": "AzureStack.json#/definitions/ErrorResponse"
+                        }
+                    }
                 },
                 "x-ms-pageable": {
                     "nextLinkName": "nextLink"
@@ -91,11 +130,11 @@
                         }
                     },
                     "default": {
-						"description": "Error response describing why the operation failed.",
-						"schema": {
-						  "$ref": "AzureStack.json#/definitions/ErrorResponse"
-						}
-					}
+                        "description": "Error response describing why the operation failed.",
+                        "schema": {
+                            "$ref": "AzureStack.json#/definitions/ErrorResponse"
+                        }
+                    }
                 }
             },
             "delete": {
@@ -127,15 +166,12 @@
                     "200": {
                         "description": "OK"
                     },
-                    "204": {
-                        "description": "NO CONTENT"
-                    },
                     "default": {
-						"description": "Error response describing why the operation failed.",
-						"schema": {
-						  "$ref": "AzureStack.json#/definitions/ErrorResponse"
-						}
-					}
+                        "description": "Error response describing why the operation failed.",
+                        "schema": {
+                            "$ref": "AzureStack.json#/definitions/ErrorResponse"
+                        }
+                    }
                 }
             },
             "put": {
@@ -178,10 +214,16 @@
                         "schema": {
                             "$ref": "#/definitions/Registration"
                         }
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation failed.",
+                        "schema": {
+                            "$ref": "AzureStack.json#/definitions/ErrorResponse"
+                        }
                     }
                 }
             },
-			"patch": {
+            "patch": {
                 "x-ms-examples": {
                     "Patch an Azure Stack registration.": {
                         "$ref": "examples/Registration/Patch.json"
@@ -216,12 +258,12 @@
                             "$ref": "#/definitions/Registration"
                         }
                     },
-					"default": {
-						"description": "Error response describing why the operation failed.",
-						"schema": {
-						  "$ref": "AzureStack.json#/definitions/ErrorResponse"
-						}
-					}
+                    "default": {
+                        "description": "Error response describing why the operation failed.",
+                        "schema": {
+                            "$ref": "AzureStack.json#/definitions/ErrorResponse"
+                        }
+                    }
                 }
             }
         },
@@ -256,6 +298,12 @@
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/ActivationKeyResult"
+                        }
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation failed.",
+                        "schema": {
+                            "$ref": "AzureStack.json#/definitions/ErrorResponse"
                         }
                     }
                 }
@@ -332,23 +380,22 @@
                     "description": "Properties of the Azure Stack registration resource",
                     "x-ms-client-flatten": true,
                     "$ref": "#/definitions/RegistrationParameterProperties"
-					
                 },
-				"location": {
-					"description": "Location of the resource.",
-					"type": "string",
-					"enum": [
-						"global"
-					],
-					"x-ms-enum": {
-						"name": "Location",
-						"modelAsString": true
-					},
-					"x-ms-mutability": [
-						"create",
-						"read"
-					]
-				}
+                "location": {
+                    "description": "Location of the resource.",
+                    "type": "string",
+                    "enum": [
+                        "global"
+                    ],
+                    "x-ms-enum": {
+                        "name": "Location",
+                        "modelAsString": true
+                    },
+                    "x-ms-mutability": [
+                        "create",
+                        "read"
+                    ]
+                }
             }
         },
         "RegistrationParameterProperties": {

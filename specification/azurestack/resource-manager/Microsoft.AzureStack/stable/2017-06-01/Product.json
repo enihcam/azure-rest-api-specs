@@ -49,11 +49,11 @@
                         }
                     },
                     "default": {
-						"description": "Error response describing why the operation failed.",
-						"schema": {
-						  "$ref": "AzureStack.json#/definitions/ErrorResponse"
-						}
-					}
+                        "description": "Error response describing why the operation failed.",
+                        "schema": {
+                            "$ref": "AzureStack.json#/definitions/ErrorResponse"
+                        }
+                    }
                 },
                 "x-ms-pageable": {
                     "nextLinkName": "nextLink"
@@ -97,11 +97,11 @@
                         }
                     },
                     "default": {
-						"description": "Error response describing why the operation failed.",
-						"schema": {
-						  "$ref": "AzureStack.json#/definitions/ErrorResponse"
-						}
-					}
+                        "description": "Error response describing why the operation failed.",
+                        "schema": {
+                            "$ref": "AzureStack.json#/definitions/ErrorResponse"
+                        }
+                    }
                 }
             }
         },
@@ -139,6 +139,12 @@
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/ExtendedProduct"
+                        }
+                    },
+                    "default": {
+                        "description": "Error response describing why the operation failed.",
+                        "schema": {
+                            "$ref": "AzureStack.json#/definitions/ErrorResponse"
                         }
                     }
                 }
@@ -399,7 +405,7 @@
                 "payloadLength": {
                     "description": "The length of product content.",
                     "type": "integer",
-                    "format" : "int64"
+                    "format": "int64"
                 },
                 "productKind": {
                     "description": "The kind of the product (virtualMachine or virtualMachineExtension)",

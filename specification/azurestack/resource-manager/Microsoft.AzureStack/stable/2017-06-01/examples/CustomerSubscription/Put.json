@@ -21,6 +21,16 @@
                     "tenantId": "dbab3982-796f-4d03-9908-044c08aef8a2"
                 }
             }
+        },
+        "201": {
+            "body": {
+                "id": "",
+                "name": "",
+                "type": "",
+                "properties": {
+                    "tenantId": "dbab3982-796f-4d03-9908-044c08aef8a2"
+                }
+            }
         }
     }
 }

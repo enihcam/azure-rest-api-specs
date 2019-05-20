@@ -49,11 +49,11 @@
                         }
                     },
                     "default": {
-						"description": "Error response describing why the operation failed.",
-						"schema": {
-						  "$ref": "AzureStack.json#/definitions/ErrorResponse"
-						}
-					}
+                        "description": "Error response describing why the operation failed.",
+                        "schema": {
+                            "$ref": "AzureStack.json#/definitions/ErrorResponse"
+                        }
+                    }
                 },
                 "x-ms-pageable": {
                     "nextLinkName": "nextLink"
@@ -97,11 +97,11 @@
                         }
                     },
                     "default": {
-						"description": "Error response describing why the operation failed.",
-						"schema": {
-						  "$ref": "AzureStack.json#/definitions/ErrorResponse"
-						}
-					}
+                        "description": "Error response describing why the operation failed.",
+                        "schema": {
+                            "$ref": "AzureStack.json#/definitions/ErrorResponse"
+                        }
+                    }
                 }
             },
             "delete": {
@@ -135,9 +135,6 @@
                 "responses": {
                     "200": {
                         "description": "OK"
-                    },
-                    "204": {
-                        "description": "NO CONTENT"
                     }
                 }
             },
@@ -175,6 +172,12 @@
                 "responses": {
                     "200": {
                         "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/CustomerSubscription"
+                        }
+                    },
+                    "201": {
+                        "description": "Created",
                         "schema": {
                             "$ref": "#/definitions/CustomerSubscription"
                         }
